@@ -1,0 +1,7 @@
+file per formato commenti per progetto sistemi operativi
+
+REGOLE PER LA SCRITTURA DEI COMMENTI
+
+- 
+- 
+- ...

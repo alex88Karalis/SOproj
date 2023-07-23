@@ -1,0 +1,25 @@
+TODO progetto sistemi operativi
+
+-1 animazione della rana quando si muove in avanti e indietro
+-2 disegnare elementi statici
+	-2.1 marciapiede (colore grigio?)
+	-2.2 prato (colore verde?)
+	-2.3 tane (colore arancio?)
+-3 scheramata game over
+-4 schermata new game
+-5 menu iniziale con carica partita, nuova partita ed esci
+-6 menu di pausa con continua, esci, settings
+-7 menu di setting con settaggio volume
+-8 suoni:
+	-8.1 suono spostamento rana
+	-8.2 suono esplosione ecc...
+-9 ##### impostare il makefile
+-10 definire stuttura dati per il personaggio rana
+	-10.1 posizione x e y
+	-10.2 vite
+	-10.3 colore/i personaggio
+	-10.4 struttura dati per animazione del personaggio
+-11 ...
+.
+.
+.

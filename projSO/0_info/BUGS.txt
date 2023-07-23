@@ -1,0 +1,9 @@
+file di report bug progetto sistemi operativi
+
+/*
+	formato singoli bug:
+	|| <data>:<ora>: 
+		- <breve descrizione del bug>
+		# <file dove si è trovato il bug>
+		> <idee su come risolverlo>
+*/

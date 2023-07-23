@@ -1,0 +1,26 @@
+FILE DI LOG PER IL PROGETTO DI SISTEMI OPERATIVI
+
+/*
+	formato singoli log:
+	data: cosa si è fatto
+	se ci sono gia dei log per quella data aggiungere anche orario:
+	|| <data>:<ora>: 
+		- <cosa si è fatto>
+		# <file sui quali si è lavorato>
+*/
+
+|| 23.07.2023:12.05: 
+	- risolto bug visualizzazione rana
+	- primi test con i colori
+	# file percorso file: 1_code/testS/main.c
+
+|| 23.07.2023:12.14: 
+	- struttrati file di info
+	# file percorso file: 0_info/*.txt
+	
+|| 23.07.23:14.54:
+	- makefile in cartella testS
+	- prima prova per scheramata iniziale
+	- creati i file game.c e game.h (utilizzati soltanto per la
+		scheramata iniziale)
+	# file toccati: 1_code/testS/*
