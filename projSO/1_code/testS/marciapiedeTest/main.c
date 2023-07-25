@@ -1,13 +1,17 @@
 #include <ncurses.h>
+#include "upscreenlib.h"
+
 
 #define MARCIAPIEDE 1
 #define SFONDO 2
 #define PRATO 3
 #define FIUME 4
 #define TANE 5
+#define HUD 6
+#define TRONCHI 7
 
-#define NUM_ROWS 40
-#define NUM_COLS 150	
+#define NUM_ROWS 37
+#define NUM_COLS 100	
 
 int main() {
     // Inizializza ncurses
@@ -24,12 +28,15 @@ int main() {
 		init_pair(PRATO,COLOR_WHITE,COLOR_GREEN);
 		init_pair(FIUME,COLOR_WHITE,COLOR_BLUE);
 		init_pair(TANE,COLOR_RED,COLOR_YELLOW);
+		
+		init_pair(HUD,COLOR_WHITE, COLOR_BLACK);
+		init_pair(TRONCHI,COLOR_RED, COLOR_YELLOW);
     // Ottieni l'altezza e la larghezza della finestra
     
     char exitCode='0';
     int height,width,new_height,new_width;
     int num_rows_colored;
-    resize_term(NUM_ROWS, NUM_COLS);
+    resize_term(NUM_ROWS, NUM_COLS); 					//non modifica la finestra la finestra
     getmaxyx(stdscr, height, width);
     while(exitCode!='q'){
     	
@@ -68,6 +75,7 @@ int main() {
     	
     	// colora il fiume
     	for(int row=5;row<height/2;row++){
+    	//int mvchgat(int y, int x, int n, attr_t attr, short color, const void *opts);
     		mvchgat(row, 0, width, A_NORMAL, FIUME, NULL);
     	}
     	
@@ -85,26 +93,32 @@ int main() {
     	}
     	
     	// colora tane
-    	for(int row=0;row<5;row++){
+    	
+    	DisegnaTane(width);
+    	DisegnaTronchi(width);
+    	
+    	/* -------da cancellare------------
+    	for(int row=3;row<3+5;row++){
     		mvchgat(row, 0, width, A_NORMAL, TANE, NULL);
     	}
     	
     	bool tana=true;
     	for(int col=0;col<width;col++){
-    		if(col%9==0){
+    		if(col%19==0){
     			tana=!tana;
     		}
     		if(!tana){
     			attron(COLOR_PAIR(FIUME));
-        	mvaddch(2, col,' ');
-        	mvaddch(3,col,' ');
-        	mvaddch(4,col,' ' );
+        	mvaddch(3+2, col,' ');
+        	mvaddch(3+3,col,' ');
+        	mvaddch(3+4,col,' ' );
         	attroff(COLOR_PAIR(FIUME));	
     		}
     			
     	}
-    	
-    	
+    	--------fine delle tane--------- 
+    	/**/ 
+    	DisegnaHUD(width);
     	// Mostra il risultato sullo schermo
     	refresh();
     	
